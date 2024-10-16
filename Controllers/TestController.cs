@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using TestApi.Models;
+using TodoApi.Models;
+
+namespace TodoApi.Controllers
+{
+    public class TestController : ControllerBase
+    {
+        private readonly TestContext _context;
+
+        public TestController(TestContext context)
+        {
+            _context = context;
+        }
+ 
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<IEnumerable<TestItem>>> Get()
+        {
+            return await _context.TestItems.ToListAsync();
+        }
+
+    }
+}
