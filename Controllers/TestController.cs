@@ -22,10 +22,14 @@ namespace TodoApi.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status503ServiceUnavailable)]
         public async Task<ActionResult<IEnumerable<TestItem>>> Get()
         {
             return await _context.TestItems.ToListAsync();
         }
+
+      
 
     }
 }
