@@ -29,6 +29,14 @@ namespace TodoApi.Controllers
             return await _context.TestItems.ToListAsync();
         }
 
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<string>> Test()
+        {
+            return  "Success";
+        }
       
 
     }
