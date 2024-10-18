@@ -47,5 +47,14 @@ namespace TodoApi.Controllers
             return  "Success";
         }
 
+        [HttpDelete]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<string>> TestDelete()
+        {
+            return  "Success";
+        }
+
     }
 }
