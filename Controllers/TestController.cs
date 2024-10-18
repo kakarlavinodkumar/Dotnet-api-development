@@ -38,6 +38,14 @@ namespace TodoApi.Controllers
             return  "Success";
         }
       
+        [HttpPut]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<string>> TestPut()
+        {
+            return  "Success";
+        }
 
     }
 }
